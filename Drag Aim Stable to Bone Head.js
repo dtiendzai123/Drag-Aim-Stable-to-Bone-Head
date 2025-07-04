@@ -6,6 +6,8 @@ class Vector3 {
   length() { return Math.sqrt(this.x ** 2 + this.y ** 2 + this.z ** 2); }
   normalize() { const len = this.length(); return len > 0 ? this.multiplyScalar(1 / len) : new Vector3(); }
   clone() { return new Vector3(this.x, this.y, this.z); }
+// 🟢 Thêm dòng này vào để sửa lỗi
+  static zero() { return new Vector3(0, 0, 0); }
 }
 
 // === Stable Drag Aim System ===
