@@ -72,10 +72,10 @@ class Vector3 {
 class DragAimEnhanced {
   constructor(config = {}) {
     this.config = {
-      dragSpeed: config.dragSpeed || 0.15,
+      dragSpeed: config.dragSpeed || 0.3,
       smoothingFactor: config.smoothingFactor || 0.8,
       headLockThreshold: config.headLockThreshold || 0.1,
-      maxDragDistance: config.maxDragDistance || 2.0,
+      maxDragDistance: config.maxDragDistance || 999.0,
       velocityThreshold: config.velocityThreshold || 0.01,
       adaptiveSpeed: config.adaptiveSpeed !== false,
       ...config
@@ -210,10 +210,10 @@ class DragAimEnhanced {
 
 // === Simulation ===
 const dragSystem = new DragAimEnhanced({
-  dragSpeed: 0.2,
+  dragSpeed: 0.3,
   smoothingFactor: 0.85,
   adaptiveSpeed: true,
-  headLockThreshold: 0.05
+  headLockThreshold: 0.01
 });
 
 let currentCrosshair = new Vector3(0, 1.0, 0);
@@ -256,7 +256,7 @@ runEnhancedDragStep();
 function createDragSystemWithPreset(preset) {
   const presets = {
     smooth: {
-      dragSpeed: 0.12,
+      dragSpeed: 0.3,
       smoothingFactor: 0.9,
       adaptiveSpeed: true,
       headLockThreshold: 0.03
@@ -268,7 +268,7 @@ function createDragSystemWithPreset(preset) {
       headLockThreshold: 0.08
     },
     precise: {
-      dragSpeed: 0.08,
+      dragSpeed: 0.3,
       smoothingFactor: 0.95,
       adaptiveSpeed: false,
       headLockThreshold: 0.02
