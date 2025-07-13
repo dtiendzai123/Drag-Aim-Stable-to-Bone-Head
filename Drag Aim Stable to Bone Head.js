@@ -213,12 +213,12 @@ const dragSystem = new DragAimEnhanced({
   dragSpeed: 0.01,
   smoothingFactor: 0.85,
   adaptiveSpeed: true,
-  headLockThreshold: 0.01
+  headLockThreshold: 0.0001
 });
 
 let currentCrosshair = new Vector3(0, 1.0, 0);
 const boneChest = new Vector3(0, 1.2, 0);
-const boneHead = new Vector3(0, 1.6, 0);
+const boneHead = new Vector3(0, 1.7, 0);
 let frameCounter = 0;
 let lastTime = Date.now();
 
@@ -259,19 +259,19 @@ function createDragSystemWithPreset(preset) {
       dragSpeed: 0.01,
       smoothingFactor: 0.9,
       adaptiveSpeed: true,
-      headLockThreshold: 0.03
+      headLockThreshold: 0.0001
     },
     responsive: {
-      dragSpeed: 0.25,
+      dragSpeed: 0.01,
       smoothingFactor: 0.7,
       adaptiveSpeed: true,
-      headLockThreshold: 0.08
+      headLockThreshold: 0.0001
     },
     precise: {
       dragSpeed: 0.3,
       smoothingFactor: 0.95,
       adaptiveSpeed: false,
-      headLockThreshold: 0.02
+      headLockThreshold: 0.0001
     }
   };
   return new DragAimEnhanced(presets[preset] || presets.smooth);
