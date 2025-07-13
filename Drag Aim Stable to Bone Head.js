@@ -74,7 +74,7 @@ class DragAimEnhanced {
     this.config = {
       dragSpeed: config.dragSpeed || 0.01,
       smoothingFactor: config.smoothingFactor || 0.8,
-      headLockThreshold: config.headLockThreshold || 0.01,
+      headLockThreshold: config.headLockThreshold || 0.0001,
       maxDragDistance: config.maxDragDistance || 999.0,
       velocityThreshold: config.velocityThreshold || 0.01,
       adaptiveSpeed: config.adaptiveSpeed !== false,
